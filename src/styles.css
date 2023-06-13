@@ -1,1 +1,510 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+/* You can add global styles to this file, and also import other style files */
+/* 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+} */
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+} */
+
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Inline&family=Noto+Serif&family=Quicksand&display=swap');
+/*@import "~bootstrap/dist/css/bootstrap.min.css";*/
+
+:root {
+  --color-txt: #33011f;
+  --color-main: #f0f0f0;
+  /* #f2f2f2; #f2f2f2; #fbfbf9; */
+  --color-1: #000000;
+  /*rgba(202,0,146,255); */
+  --color-1-1: rgba(165, 42, 42, 0.6);
+  --color-2: #b546a9;
+  --color-3: #f3c1ea;
+  --color-4: rgba(241, 219, 236, 255);
+  --color-5: #f1dbec;
+  --color-6: #f8eaf5;
+  --color-br-1: #bc5c00;
+  --color-br-2: #eda402;
+  --color-br-3: #fcc900;
+  --color-br-4: #ffcc00;
+  --color-br-5: #fad91d;
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-lignt: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-danger-1: #f53645;
+  --color-blue: #2e4898;
+  --color-background: #f5f5f7;
+  --card-background: #f2f2f2;
+  --card-background-blue-light: #f2f8fc;
+  --card-background-light: #f8f8f8;
+  --border-color: #d2d2d7;
+  --text-color-dark: #6e6e73;
+  --link-color-dark: #424245;
+  --title-color-dark: #1d1d1f;
+  --title-color-dark-hover: #000;
+  --text-color-light: #f5f5f7;
+  --text-color-light-hover: #f9f9fa;
+  --card-border-radius-1: 4px;
+  --card-border-radius-2: 6px;
+  --card-border-radius-3: 10px;
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  /*--box-shadow: 0 2rem 3rem var(--color-light);*/
+  --box-shadow: 0px 1px 3px 0px rosybrown;
+  /*--box-shadow: 0px 2px 6px 0px
+  rgba(0, 0, 0, 0.2),
+  0px 1px 1px 0px rgba(0, 0, 0,0.14),
+  0px 1px 3px 0px rgba(0, 0, 0, 0.12);*/
+
+  --viewport-large-min-width: 1024px;
+
+  --viewport-medium-max-width: 1023px;
+  --viewport-medium-min-width: 768px;
+
+  --viewport-small-max-width: 767px;
+  --viewport-small-min-width: 320px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  appearance: none;
+  text-decoration: 0;
+  list-style: none;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: popins, sans-serif;
+  font-size: 0.88rem;
+  background-color: var(--color-white);
+  overflow-x: hidden;
+
+}
+
+a {
+  color: var(--color-dark);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 0.87rem;
+}
+
+h4 {
+  font-size: 0.8rem;
+}
+
+h5 {
+  font-size: 0.77rem;
+}
+
+h6 {
+  font-size: 0.7rem;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+.text-muted {
+  color: var(--color-info-dark);
+}
+
+p {
+  color: var(--text-color-dark);
+}
+
+b {
+  color: var(--color-dark);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.danger-1 {
+  color: var(--color-danger-1);
+}
+
+/* end of general style */
+
+/* Start Login CSS */
+.container,
+.container-auth {
+  margin: 2% auto;
+}
+
+.container-auth {
+  display: flex;
+  justify-content: center;
+
+}
+
+.container-auth .box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 450px;
+  min-height: 550px;
+  padding: 20px;
+  background-color: var(--color-main);
+  border-radius: 10px;
+  backdrop-filter: blur(25px);
+  margin-top: 30px;
+  box-shadow: var(--box-shadow);
+  flex-direction: column;
+}
+
+.container-auth .form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container-auth .form .row50 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.container-auth .form .row50 .inputBox {
+  width: calc(50% - 5px);
+}
+
+.container-auth .form h2 {
+  /* margin: 40px; */
+  color: var(--color-txt);
+  text-align: center;
+}
+
+.container-auth .form .inputBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+  font-size: .9rem;
+}
+
+.container-auth .form .inputBox input,
+.inputBox input {
+  padding: 15px 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}
+
+.container-auth .form .inputBox span {
+  position: absolute;
+  left: 0;
+  color: rgba(0, 0, 0, 0.25);
+  padding: 15px 5px 10px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.container-auth .form.signup .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 15px 5px 10px;
+  pointer-events: none;
+  transition: 0.5s;
+  color: rgba(0, 0, 0, 0.9);
+  transform: translateX(0px) translateY(-100%);
+}
+
+.container-auth .form .inputBox input:active~span,
+.container-auth .form .inputBox input:valid~span,
+.container-auth .form .inputBox input:focus~span {
+  color: rgba(0, 0, 0, 0.9);
+  /* top: -100%; */
+  transform: translateX(0px) translateY(-100%);
+}
+
+.container-auth .form .links {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 20px;
+  margin-top: 20px; */
+}
+
+.container-auth .form .links a {
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #243a3e;
+}
+
+.container-auth .form .links a:hover,
+.container-auth .form .links a:nth-child(2) {
+  color: var(--color-primary);
+}
+
+.container-auth .form input[type="submit"] {
+  color: var(--color-main);
+  border-radius: 4px;
+  border: 1px solid #243a3e;
+  background-color: var(--color-txt);
+  cursor: pointer;
+  height: 42px;
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  letter-spacing: 0.01cm;
+}
+
+.container-auth .form input[type="submit"]:hover {
+  letter-spacing: 0.02cm;
+}
+
+.container-auth .form input[type="submit"]:active {
+  opacity: 0.7;
+}
+
+.container-auth .signup .form .row50 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#message {
+  display: none;
+  color: var(--color-danger);
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 30px;
+  padding-top: 5px;
+  transition: 0.5s;
+  width: 100%;
+
+}
+
+#registered {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 450px;
+  padding: 40px;
+  background-color: #d0d0d0;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+#registered p,
+#registered a {
+  color: rgb(13, 55, 13);
+}
+
+#registered a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #314e53;
+  height: 40px;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* End Login CSS */
+
+/* Calendrier date reservation */
+.mdc-line-ripple::before,
+.mdc-line-ripple::after {
+  width: 0 !important;
+  border: none !important;
+}
+
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-infix .mat-mdc-floating-label {
+  letter-spacing: 0;
+  width: auto;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  width: 0 !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
+}
+
+.mdc-text-field {
+  padding: 0 !important;
+}
+
+.mdc-menu-surface.mat-mdc-autocomplete-panel {
+  max-height: 270px !important;
+}
+
+/* les média queries */
+
+@media (max-width: 319px) {
+  .container-auth .box {
+    width: 260px;
+    padding: 10px;
+  }
+
+  .container-auth .form .row50 .inputBox {
+    width: 100%;
+  }
+
+  mat-card {
+    max-width: 260px !important;
+    min-width: 220px !important;
+  }
+
+  .row.search-field .input-search {
+    padding-left: 20px !important;
+  }
+
+  .row.search-field mat-form-field::after,
+  .row.search-field mat-form-field::before {
+    content: none !important;
+
+  }
+
+  .mdc-menu-surface.mat-mdc-autocomplete-panel,
+  .cdk-overlay-pane {
+    margin-top: 10px !important;
+  }
+}
+
+@media (min-width: 320px) {
+  .mdc-menu-surface.mat-mdc-autocomplete-panel {
+    margin-top: 10px !important;
+  }
+
+  .container-auth .box {
+    width: 300px;
+    padding: 10px;
+  }
+
+  .row.search-field {
+    width: 96%;
+  }
+
+  .row.search-field .input-search {
+    padding-left: 20px !important;
+  }
+
+  .row.search-field mat-form-field::after,
+  .row.search-field mat-form-field::before {
+    content: none !important;
+
+  }
+
+}
+
+@media (min-width: 480px) {
+  .container-auth .box {
+    width: 420px;
+  }
+
+  .row.search-field {
+    width: 96%;
+  }
+}
+
+@media (min-width: 600px) {
+  .container-auth .box {
+    width: 460px;
+    padding: 20px;
+  }
+
+
+}
+
+@media (min-width: 840px) {
+  .row.search-field .input-search {
+    padding-left: 5px !important;
+  }
+
+  .row.search-field mat-form-field::after,
+  .row.search-field mat-form-field::before {
+    content: "" !important;
+  }
+
+  .mdc-menu-surface.mat-mdc-autocomplete-panel,
+  .cdk-overlay-pane {
+    margin-top: 5px !important;
+  }
+
+}
+
+@media (min-width: 1200px) {}

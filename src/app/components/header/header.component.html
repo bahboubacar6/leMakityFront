@@ -1,0 +1,40 @@
+<div>
+  <mat-toolbar style="height: 50px;color: var(--color-txt);background-color: var(--color-main);" class="toolbar">
+    <!-- Media query for screens smaller than 600px -->
+    <div class="toolbar-content" *ngIf="screenSize < 600">
+      <div class="left-items">
+        <a mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>menu</mat-icon>
+        </a>
+        <mat-menu #menu="matMenu" style="width: 300px">
+          <button mat-menu-item routerLink="/home">Produits</button>
+          <button mat-menu-item routerLink="/login">Connexion</button>
+          <button mat-menu-item routerLink="/signup">Inscription</button>
+          <button mat-menu-item routerLink="/admin">Administration</button>
+        </mat-menu>
+      </div>
+
+    </div>
+    <a mat-icon routerLink="/home" mat-icon-button *ngIf="screenSize >= 600">
+      <mat-icon class="toolbar-icon">beach_access</mat-icon>
+    </a>
+
+    <span class="spacer"></span>
+    <div *ngIf="screenSize >= 600">
+      <a mat-button routerLink="/home">Produits</a>
+      <a mat-button routerLink="/login">Connexion</a>
+      <a mat-button routerLink="/signup">Inscription</a>
+      <a mat-button routerLink="/admin">Administration</a>
+    </div>
+    <div class="center-items" *ngIf="screenSize < 600">
+      <a mat-icon routerLink="/home" mat-icon-button *ngIf="screenSize < 600">
+        <mat-icon class="toolbar-icon">beach_access</mat-icon>
+      </a>
+    </div>
+    <span class="spacer"></span>
+    <a mat-icon-button routerLink="/profile">
+      <mat-icon class="toolbar-icon">account_circle</mat-icon>
+    </a>
+
+  </mat-toolbar>
+</div>

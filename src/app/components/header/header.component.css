@@ -1,0 +1,26 @@
+.toolbar {
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.toolbar-icon {
+  font-size: 24px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+a.mat-button {
+  text-align: center;
+}
+
+.center-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-menu {
+  min-width: 200px;
+}

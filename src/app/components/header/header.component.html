@@ -16,7 +16,7 @@
 
     </div>
     <a mat-icon routerLink="/home" mat-icon-button *ngIf="screenSize >= 600">
-      <mat-icon class="toolbar-icon">beach_access</mat-icon>
+      <mat-icon class="toolbar-icon"><img src="/assets/images/makitiLogo.png" alt="logo"></mat-icon>
     </a>
 
     <span class="spacer"></span>
@@ -28,7 +28,9 @@
     </div>
     <div class="center-items" *ngIf="screenSize < 600">
       <a mat-icon routerLink="/home" mat-icon-button *ngIf="screenSize < 600">
-        <mat-icon class="toolbar-icon">beach_access</mat-icon>
+        <mat-icon class="toolbar-icon">
+          <img src="/assets/images/makitiLogo.png" alt="logo">
+        </mat-icon>
       </a>
     </div>
     <span class="spacer"></span>

@@ -1,3 +1,4 @@
+<div class="mt-3">
 <div *ngIf="images && images.length > 0" class="carousel-container">
   <img *ngFor="let image of images; let i = index" 
     [src]="image.imageSrc" [alt]="image.imageAlt"
@@ -21,5 +22,5 @@
     <i class="bi bi-arrow-right-circle icon-carousel icon-next" (click)="onNextClick()"></i>
   </button>
 </div>
-
+</div>
 

@@ -16,7 +16,8 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
-import {MatCardModule} from "@angular/material/card";
+import { MatCardModule } from "@angular/material/card";
+import {MatSelectModule} from '@angular/material/select';
 import {LayoutModule} from "@angular/cdk/layout";
 import { ProductComponent } from './components/products/product/product.component';
 import { ProductDetailComponent } from './components/products/product-detail/product-detail.component';
@@ -25,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductModule } from './components/products/product.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from './components/carousel/carousel.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { CarouselModule } from './components/carousel/carousel.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -65,7 +68,8 @@ import { CarouselModule } from './components/carousel/carousel.module';
     MatInputModule,
     ProductModule,
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    MatSelectModule,
   ],
   exports: [
     MatIconModule,

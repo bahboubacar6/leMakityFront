@@ -9,10 +9,4 @@ import { CarouselImage } from './models/carousel.model';
 export class AppComponent {
   title = 'makityFront';
 
-  images: CarouselImage[] = [
-    { imageSrc: '/assets/images/makity4.jpg', imageAlt: 'photo1'},
-    { imageSrc: '/assets/images/makity2.jpg', imageAlt: 'photo2'},
-    { imageSrc: '/assets/images/makity3.jpg', imageAlt: 'photo3'},
-    { imageSrc: '/assets/images/makity1.jpg', imageAlt: 'photo4'},
-  ];
 }

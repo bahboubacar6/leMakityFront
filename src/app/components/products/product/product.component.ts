@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { CarouselImage } from 'src/app/models/carousel.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductPage } from 'src/app/models/productPage.model';
 import { ProductService } from 'src/app/services/product.service';
@@ -16,6 +17,13 @@ export class ProductComponent implements OnInit {
   searchFormGroup: FormGroup | undefined;
   currentPage: number = 0;
   pageSize: number = 6;
+
+  images: CarouselImage[] = [
+    { imageSrc: '/assets/images/makity4.jpg', imageAlt: 'photo1'},
+    { imageSrc: '/assets/images/makity2.jpg', imageAlt: 'photo2'},
+    { imageSrc: '/assets/images/makity3.jpg', imageAlt: 'photo3'},
+    { imageSrc: '/assets/images/makity1.jpg', imageAlt: 'photo4'},
+  ];
 
   constructor(private productService: ProductService, private fb: FormBuilder) { }
 

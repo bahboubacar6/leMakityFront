@@ -31,6 +31,7 @@
   </div>
 
 </div> -->
+<app-carousel [images]="images" [autoSlide]="true"></app-carousel>
 <div class="container" *ngIf="searchFormGroup">
   <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchProducts()">
     <div class="input-group">
@@ -56,7 +57,7 @@
           <p><span class="prix-produit">{{ prod.price }} € </span>Prix par unite</p>
           <mat-card-footer class="d-flex justify-content-between m-1">
             <button class="btn btn-success">Ajouter au panier</button>
-            <button class="btn btn-success">Voir les details</button>
+            <button class="btn btn-primary">Voir les details</button>
           </mat-card-footer>
         </mat-card-content>
 

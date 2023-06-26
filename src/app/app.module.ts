@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,9 +24,23 @@ import { ProductDetailComponent } from './components/products/product-detail/pro
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductModule } from './components/products/product.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from './components/carousel/carousel.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './components/admins/admin/admin.component';
+import { UserComponent } from './components/users/user/user.component';
+import { AddUserComponent } from './components/users/add-user/add-user.component';
+import { DetailUserComponent } from './components/users/detail-user/detail-user.component';
+import { OrderComponent } from './components/orders/order/order.component';
+import { AddOrderComponent } from './components/orders/add-order/add-order.component';
+import { CategoryComponent } from './components/categories/category/category.component';
+import { AddCategoryComponent } from './components/categories/add-category/add-category.component';
+import { NavAdminComponent } from './components/admins/nav-admin/nav-admin.component';
+import { ProfileComponent } from './components/profiles/profile/profile.component';
+import { UpdateProfileComponent } from './components/profiles/update-profile/update-profile.component';
+import { InterceptorService } from './services/interceptor.service';
+import { LoginComponent } from './components/login/login.component';
+import { UpdateCategoryComponent } from './components/categories/update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +48,20 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductComponent,
     ProductDetailComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent,
+    UserComponent,
+    AddUserComponent,
+    DetailUserComponent,
+    OrderComponent,
+    AddOrderComponent,
+    CategoryComponent,
+    AddCategoryComponent,
+    NavAdminComponent,
+    ProfileComponent,
+    UpdateProfileComponent,
+    LoginComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +102,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    },
+    {provide: LOCALE_ID, useValue: 'fr-FR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,23 @@
+<div class="container mt-2" *ngIf="updateCategoryFormGroup">
+  <div class="card col-md-6 offset-3">
+    <div class="card-header">Modifier la categorie</div>
+    <div class="card-body">
+      <form [formGroup]="updateCategoryFormGroup" (ngSubmit)="updateCategorie()">
+        <div class="form-group mb-3">
+          <label class="form-label">ID :</label>
+          <input type="text" class="form-control" readonly formControlName="idCategory">
+        </div>
+        <div class="form-group mb-3">
+          <label class="form-label">Nom de la Categorie :</label>
+          <input type="text" class="form-control" formControlName="categoryName">
+          <span class="text-danger" *ngIf="updateCategoryFormGroup.controls['categoryName'].touched
+                                && updateCategoryFormGroup.controls['categoryName'].errors
+                                && updateCategoryFormGroup.controls['categoryName'].errors!['required']">
+            CategoryName is required</span>
+        </div>
+
+        <button class="btn btn-success" [disabled]="updateCategoryFormGroup.invalid">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

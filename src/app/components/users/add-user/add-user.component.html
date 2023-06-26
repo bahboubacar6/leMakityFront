@@ -1,0 +1,77 @@
+<div class="container-auth" *ngIf="addUserFormGroup">
+  <div class="login box">
+    <form class="form" [formGroup]="addUserFormGroup" (ngSubmit)="addUser()">
+      <h2>Inscrivez-vous</h2>
+      <div class="danger-1 align-self-center" *ngIf="message">{{ message }}</div>
+      <div id="message" class="inputBox">
+        <p>{{ message }}</p>
+      </div>
+     
+      <div class="row50">
+        <div class="inputBox">
+          <label class="form-label">Nom :</label>
+          <input type="text" class="form-control" formControlName="firstName">
+          <span class="text-danger" *ngIf="addUserFormGroup.controls['firstName'].touched
+                                    && addUserFormGroup.controls['firstName'].errors
+                                    && addUserFormGroup.controls['firstName'].errors!['required']">
+            Firstname is required</span>
+        </div>
+        <div class="inputBox">
+          <label class="form-label">Prenom :</label>
+          <input type="text" class="form-control" formControlName="lastName">
+          <span class="text-danger" *ngIf="addUserFormGroup.controls['lastName'].touched
+                                    && addUserFormGroup.controls['lastName'].errors
+                                    && addUserFormGroup.controls['lastName'].errors!['required']">
+            Lastname is required</span>
+        </div>
+      </div>
+
+      <div class="row50">
+        <div class="inputBox">
+          <label class="form-label">Email :</label>
+          <input type="text" class="form-control" formControlName="email">
+          <span class="text-danger" *ngIf="addUserFormGroup.controls['email'].touched
+                                                    && addUserFormGroup.controls['email'].errors
+                                                    && addUserFormGroup.controls['email'].errors!['email']">
+            Email is not valid</span>
+        </div>
+        <div class="inputBox">
+          <label class="form-label">Telephone :</label>
+          <input type="text" class="form-control" formControlName="telephone">
+          <span class="text-danger" *ngIf="addUserFormGroup.controls['telephone'].touched
+                                              && addUserFormGroup.controls['telephone'].errors
+                                              && addUserFormGroup.controls['telephone'].errors!['minlength']">
+            Telephone must contain minimum 10 characters</span>
+        </div>
+      </div>
+
+      <div class="inputBox">
+        <label class="form-label">Adresse :</label>
+        <input type="text" class="form-control" formControlName="address">
+        <span class="text-danger" *ngIf="addUserFormGroup.controls['address'].touched
+                                                && addUserFormGroup.controls['address'].errors
+                                                && addUserFormGroup.controls['address'].errors!['address']">
+          Address is not valid</span>
+      </div>
+      
+      <div class="row50">
+        <div class="inputBox">
+          <label class="form-label">Mot de passe :</label>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="inputBox">
+          <label class="form-label">Confirmation mot de passe :</label>
+          <input type="password" class="form-control" formControlName="resetPasswordToken">
+        </div>
+        <div class="danger-1"
+          *ngIf="!(addUserFormGroup.value.password === addUserFormGroup.value.resetPasswordToken) && addUserFormGroup.controls['resetPasswordToken'].touched">
+          Le mot de passe n'est pas confirmé</div>
+      </div>
+
+      <div class="links m-3">
+        <a [routerLink]="['/login']">Vous avez un compte? Connectez-vous</a>
+      </div>
+      <button class="btn btn-success" type="submit" [disabled]="addUserFormGroup.invalid">Save</button>
+    </form>
+  </div>
+</div>

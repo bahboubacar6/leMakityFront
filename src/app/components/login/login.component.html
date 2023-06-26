@@ -1,0 +1,30 @@
+<div class="container-auth">
+  <div class="login box">
+    <form class="form" [formGroup]="userFormGroup" (ngSubmit)="login()">
+      <h2>Connectez-vous</h2>
+      <div class="danger-1 align-self-center" *ngIf="message">{{ message }}</div>
+      <div id="message" class="inputBox">
+        <p>Votre email ou mot de passe incorrect</p>
+      </div>
+      <div class="inputBox">
+        <label class="form-label">Email :</label>
+        <input type="text" class="form-control" formControlName="username">
+        <span class="text-danger" *ngIf="userFormGroup.controls['username'].touched
+                                 && userFormGroup.controls['username'].errors
+                                 && userFormGroup.controls['username'].errors['required']">Username is required </span>
+      </div>
+      <div class="inputBox">
+        <label class="form-label">Password :</label>
+        <input type="password" class="form-control" formControlName="password">
+        <span class="text-danger" *ngIf="userFormGroup.controls['password'].touched
+                                 && userFormGroup.controls['password'].errors
+                                 && userFormGroup.controls['password'].errors['required']">Password is required </span>
+      </div>
+      <div class="links">
+        <a [routerLink]="['/signup']">Mot de passe oublié</a>
+        <a [routerLink]="['/signup']">Créer un compte</a>
+      </div>
+      <button class="btn btn-success" type="submit" [disabled]="userFormGroup.invalid">Connecter</button>
+    </form>
+  </div>
+</div>

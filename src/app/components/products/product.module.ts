@@ -16,14 +16,18 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatCardModule} from "@angular/material/card";
 import {LayoutModule} from "@angular/cdk/layout";
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductGesComponent } from './product-ges/product-ges.component';
 
 const productRoutes: Routes = [
   { path: 'home', component: ProductComponent },
-  { path: 'home/detail-product', component: ProductDetailComponent}
+  { path: 'home/detail-product', component: ProductDetailComponent },
+  { path: 'product', component: ProductGesComponent}
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ProductGesComponent
+  ],
   imports: [
    CommonModule,
     RouterModule.forChild(productRoutes),

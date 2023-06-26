@@ -1,0 +1,22 @@
+<div class="container-auth" *ngIf="addCategoryFormGroup">
+  <div class="login box">
+    <form class="form" [formGroup]="addCategoryFormGroup" (ngSubmit)="addCategory()">
+      <h2>Ajouter une categorie</h2>
+      <div class="danger-1 align-self-center" *ngIf="message">{{ message }}</div>
+      <div id="message" class="inputBox">
+        <p>{{ message }}</p>
+      </div>
+      
+        <div class="inputBox">
+          <label class="form-label">Nom de la categorie:</label>
+          <input type="text" class="form-control" formControlName="categoryName">
+          <span class="text-danger" *ngIf="addCategoryFormGroup.controls['categoryName'].touched
+                                    && addCategoryFormGroup.controls['categoryName'].errors
+                                    && addCategoryFormGroup.controls['categoryName'].errors!['required']">
+            Categorie name is required</span>
+        </div>
+        
+      <button class="btn btn-success mt-3" type="submit" [disabled]="addCategoryFormGroup.invalid">Save</button>
+    </form>
+  </div>
+</div>

@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  hostProduct: "http://localhost:8082/v1/products"
+  hostProduct: "http://localhost:8082/v1/products/",
+  hostUser: "http://localhost:8082/v1/users/",
+  hostCategory: "http://localhost:8082/v1/category/",
+  hostLogin: "http://localhost:8082/v1/auth/",
+  hostOrder: "http://localhost:8082/v1/orders/"
 };
 
 /*

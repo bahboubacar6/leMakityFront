@@ -1,0 +1,54 @@
+<div class="container">
+  <app-nav-admin></app-nav-admin>
+
+  <!-- <div class="container mt-3">
+        <ng-container *ngIf="users$|async as listUsers; else failureOrLoading">
+            <div class="card">
+                <div class="card-header">Liste des utilisateurs</div>
+                <div class="card-body">
+                    <div *ngIf="searchFormGroup">
+                        <form [formGroup]="searchFormGroup" (ngSubmit)="searchUser()">
+                            <div class="input-group">
+                                <label class="input-group-text">Keyword :</label>
+                                <input type="text" formControlName="keyword" class="form-control">
+                                <button class="btn btn-info">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr><th>ID</th><th>NOM</th><th>PRENOM</th><th>EMAIL</th><th>NOM UTILISATEUR</th><th>ACTIONS</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let u of users$| async ">
+                                <td>{{u.idUser}}</td>
+                                <td>{{u.firstName}}</td>
+                                <td>{{u.lastName}}</td>
+                                <td>{{u.email}}</td>
+                                <td>{{u.username}}</td>
+                                <td>
+                                    <button class="btn btn-danger" (click)="deleteUser(u)">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #failureOrLoading>
+            <ng-container *ngIf="errorMessage; else loading">
+                <div class="text-danger">
+                    {{errorMessage}}
+                </div>
+            </ng-container>
+            <ng-template #loading>
+                Loading..........
+            </ng-template>
+        </ng-template>
+    </div> -->
+
+</div>

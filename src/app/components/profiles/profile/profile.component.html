@@ -1,0 +1,42 @@
+<section>
+  <div class="container py-2">
+    <div class="row" *ngIf="user">
+      <div class="card mb-3 col-lg-3" style="background-color:var(--color-main) ">
+        <div class="card-body text-center align-items-stretch">
+          <img src="/assets/images/person_fill_icon_159457.png" class="rounded-circle" style="width: 150px;"
+            alt="Avatar" />
+          <p class="text-muted mb-1">{{user.firstName}} {{user.lastName}}</p>
+          <p class="text-muted mb-4">{{user.email}}</p>
+          <div class="d-flex justify-content-center mb-2">
+            <button type="button" class="btn btn-outline-primary ms-1" (click)="updateProfile(user)">Modifier le profile</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 card mb-3" style="height: 100%" style="background-color:var(--color-main)">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Nom, Prénom</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{user.firstName}} {{user.lastName}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0">{{user.email}}</p>
+            </div>
+          </div>
+          <hr>
+          <button type="button" class="btn btn-outline-success ms-1" (click)="logout()">Deconexion</button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>

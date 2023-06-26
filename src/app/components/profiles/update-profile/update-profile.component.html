@@ -1,0 +1,39 @@
+<div class="container mt-2" *ngIf="updateUserFormGroup">
+  <div class="card col-md-6 offset-3">
+    <div class="card-header">Modifier l'utilisateur</div>
+    <div class="card-body">
+      <form [formGroup]="updateUserFormGroup" (ngSubmit)="updateUser()">
+        <div class="form-group mb-3">
+          <label class="form-label">ID :</label>
+          <input type="text" class="form-control" readonly formControlName="idUser">
+        </div>
+        <div class="form-group mb-3">
+          <label class="form-label">Nom :</label>
+          <input type="text" class="form-control" formControlName="firstName">
+          <span class="text-danger" *ngIf="updateUserFormGroup.controls['firstName'].touched
+                                && updateUserFormGroup.controls['firstName'].errors
+                                && updateUserFormGroup.controls['firstName'].errors!['required']">
+            Firstname is required</span>
+        </div>
+        <div class="form-group mb-3">
+          <label class="form-label">Prenom :</label>
+          <input type="text" class="form-control" formControlName="lastName">
+          <span class="text-danger" *ngIf="updateUserFormGroup.controls['lastName'].touched
+                                && updateUserFormGroup.controls['lastName'].errors
+                                && updateUserFormGroup.controls['lastName'].errors!['required']">
+            Lastname is required</span>
+        </div>
+        <div class="form-group mb-3">
+          <label class="form-label">Email :</label>
+          <input type="text" class="form-control" formControlName="email">
+          <span class="text-danger" *ngIf="updateUserFormGroup.controls['email'].touched
+                                && updateUserFormGroup.controls['email'].errors
+                                && updateUserFormGroup.controls['email'].errors!['email']">
+            Email is not valid</span>
+        </div>
+      
+        <button class="btn btn-success" [disabled]="updateUserFormGroup.invalid">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

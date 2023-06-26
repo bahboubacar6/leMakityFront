@@ -1,0 +1,77 @@
+<div class="container">
+  <app-nav-admin></app-nav-admin>  
+</div>
+<div class="container mt-3">
+  <ng-container *ngIf="users$|async as listUsers; else failureOrLoading">
+    <div class="card">
+      <div class="card-header">Liste des utilisateurs</div>
+      <div class="card-body">
+        <div *ngIf="searchFormGroup">
+          <form [formGroup]="searchFormGroup" (ngSubmit)="searchUser()">
+            <div class="input-group">
+              <label class="input-group-text">Keyword :</label>
+              <input type="text" formControlName="keyword" class="form-control">
+              <button class="btn btn-info">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NOM</th>
+              <th>PRENOM</th>
+              <th>EMAIL</th>
+              <th>TEL</th>
+              <th>ADRESSE</th>
+              <th colspan="3">ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of listUsers.userDTOS ">
+              <td>{{u.idUser}}</td>
+              <td>{{u.firstName}}</td>
+              <td>{{u.lastName}}</td>
+              <td>{{u.email}}</td>
+              <td>{{u.telephone}}</td>
+              <td>{{u.address}}</td>
+              <td>
+                <button class="btn btn-primary" (click)="detailUser(u.idUser)">
+                  <i class="bi bi-person-fill"></i>
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-secondary" (click)="updateUser(u)">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteUser(u)">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="nav nav-pills">
+          <li *ngFor="let item of [].constructor(listUsers.totalPages); let p = index">
+            <a [ngClass]="p==currentPage?'btn-info':'btn-outline-info'" (click)="gotoPage(p)" class="btn m-1">{{p}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLoading>
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading..........
+    </ng-template>
+  </ng-template>
+</div>
+

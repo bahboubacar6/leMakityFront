@@ -11,6 +11,8 @@ import { UpdateProfileComponent } from './components/profiles/update-profile/upd
 import { ProfileComponent } from './components/profiles/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { UpdateCategoryComponent } from './components/categories/update-category/update-category.component';
+import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
+import { AddOrderComponent } from './components/orders/add-order/add-order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: "full" },
@@ -23,9 +25,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: AddUserComponent},
   { path: 'orders', component: OrderComponent },
+  { path: 'order/:id', component: OrderDetailComponent},
   { path: 'categories', component: CategoryComponent },
   { path: 'categories/:update', component: UpdateCategoryComponent },
-  { path: 'addCategorie', component: AddCategoryComponent}
+  { path: 'addCategorie', component: AddCategoryComponent },
+  { path: 'addOrder', component: AddOrderComponent}
 ];
 
 @NgModule({

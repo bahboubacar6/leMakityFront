@@ -1,19 +1,26 @@
-import { FileHandle } from "./file-handle.model";
+import { User } from "./user.model";
 
-export interface ProductPage {
+export interface OrderPage {
     currentPage: number;
     totalPages:  number;
     pageSize:    number;
-    productDTOS: ProductDTO[];
+    orderDTOS:   OrderDTO[];
 }
 
-export interface ProductDTO {
+export interface OrderDTO {
+    idOrder:  number;
+    amount:   number;
+    date:     Date;
+    idUser:   User;
+    products: Product[];
+}
+
+export interface Product {
     idProduct:     number;
     productName:   string;
     price:         number;
     description:   string;
     image:         string;
     stockQuantity: number;
-    productImages: FileHandle[];
     idCategory:    number;
 }

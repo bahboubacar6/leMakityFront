@@ -1,0 +1,74 @@
+<div class="container-auth" *ngIf="addProductFormGroup">
+  <div class="login box">
+    <form class="form" [formGroup]="addProductFormGroup" (ngSubmit)="saveProduct()">
+
+      {{addProductFormGroup.value|json}}
+      <h2>Ajouter un produit</h2>
+      <div class="danger-1 align-self-center" *ngIf="message">{{ message }}</div>
+      <div id="message" class="inputBox">
+        <p>{{ message }}</p>
+      </div>
+
+      <div class="row50">
+        <div class="inputBox">
+          <label class="form-label">Nom du produit :</label>
+          <input type="text" class="form-control" formControlName="productName">
+          <span class="text-danger" *ngIf="addProductFormGroup.controls['productName'].touched
+                                    && addProductFormGroup.controls['productName'].errors
+                                    && addProductFormGroup.controls['productName'].errors!['required']">
+            productName is required</span>
+        </div>
+        <div class="inputBox">
+          <label class="form-label">Prix :</label>
+          <input type="text" class="form-control" formControlName="price">
+          <span class="text-danger" *ngIf="addProductFormGroup.controls['price'].touched
+                                    && addProductFormGroup.controls['price'].errors
+                                    && addProductFormGroup.controls['price'].errors!['required']">
+            price is required</span>
+        </div>
+      </div>
+
+      <div class="row50">
+        <div class="inputBox">
+          <label class="form-label">Description :</label>
+          <input type="text" class="form-control" formControlName="description">
+          <span class="text-danger" *ngIf="addProductFormGroup.controls['description'].touched
+                                                    && addProductFormGroup.controls['description'].errors
+                                                    && addProductFormGroup.controls['description'].errors!['description']">
+            description is not valid</span>
+        </div>
+        <!-- <div class="inputBox">
+          <label class="form-label">Image :</label>
+          <input type="text" class="form-control" formControlName="image">
+          <span class="text-danger" *ngIf="addProductFormGroup.controls['image'].touched
+                                              && addProductFormGroup.controls['image'].errors
+                                              && addProductFormGroup.controls['image'].errors!['minlength']">
+            image is required</span>
+        </div> -->
+        <div class="inputBox">
+          <label class="form-label">Image :</label>
+          <input type="file" multiple #selectFile (change)="onFileSelected($event)" formControlName="image">
+        </div>
+      </div>
+
+      <div class="row50">
+        <div class="inputBox">
+          <label class="form-label">Quantité stock :</label>
+          <input type="number" class="form-control" formControlName="stockQuantity">
+        </div>
+        <div class="inputBox">
+          <label class="form-label">Categorie :</label>
+          <select formControlName="idCategory">
+            <option  ngValue ="" disabled> Choisissez la categorie </option>
+            <option *ngFor="let cat of categorie"  ngValue = {{cat.idCategory}}>
+              {{ cat.categoryName }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-success mt-5" type="submit" [disabled]="addProductFormGroup.invalid">Save</button>
+    </form>
+  </div>
+</div>
+

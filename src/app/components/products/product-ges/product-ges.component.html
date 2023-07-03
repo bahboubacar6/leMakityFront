@@ -1,1 +1,81 @@
-<p>product-ges works!</p>
+<div class="container">
+  <app-nav-admin></app-nav-admin>
+</div>
+<div class="container mt-3">
+  <ng-container *ngIf="products$|async as listProducts; else failureOrLoading">
+    <div class="card">
+      <div class="card-header">Liste des produits</div>
+      <div class="card-body">
+        <div *ngIf="searchFormGroup">
+          <form [formGroup]="searchFormGroup" (ngSubmit)="searchProduct()">
+            <div class="input-group">
+              <label class="input-group-text">Keyword :</label>
+              <input type="text" formControlName="keyword" class="form-control">
+              <button class="btn btn-info">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NOM</th>
+              <th>PRIX</th>
+              <th>STOCK</th>
+              <th>CATEGORIE</th>
+              <th>DESCRIPTION</th>
+              <th>IMAGE</th>
+              <th colspan="3">ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let prod of listProducts.productDTOS">
+              <td>{{prod.idProduct}}</td>
+              <td>{{prod.productName}}</td>
+              <td>{{prod.price}}</td>
+              <td>{{prod.stockQuantity}}</td>
+              <td>{{prod.idCategory}}</td>
+              <td>{{prod.description}}</td>
+              <td>
+                <!-- <img style="height: 100%; width: 100%;" [src]="prod.productImages[0]?.picByte"> -->
+                <img style="height: 30px; width: 40px;" [src]="prod.image">
+              </td>
+              <td>
+                <button class="btn btn-primary" (click)="detailProduct(prod.idProduct)">
+                  <i class="bi bi-person-fill"></i>
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-secondary" (click)="updateProduct(prod)">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteProduct(prod)">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="nav nav-pills">
+          <li *ngFor="let item of [].constructor(listProducts.totalPages); let p = index">
+            <a [ngClass]="p==currentPage?'btn-info':'btn-outline-info'" (click)="gotoPage(p)" class="btn m-1">{{p}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLoading>
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading..........
+    </ng-template>
+  </ng-template>
+</div>

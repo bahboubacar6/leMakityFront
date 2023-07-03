@@ -1,0 +1,61 @@
+<div class="container mt-2" *ngIf="updateProductFormGroup">
+  <div class="card col-md-6 offset-3">
+    <div class="card-header">Modifier le produit</div>
+    <div class="card-body">
+      <form [formGroup]="updateProductFormGroup" (ngSubmit)="updateProduct()">
+        <div class="form-group mb-3">
+          <label class="form-label">ID :</label>
+          <input type="text" class="form-control" readonly formControlName="idProduct">
+        </div>
+        <div class="form-group mb-3">
+          <label class="form-label">Nom du produit :</label>
+          <input type="text" class="form-control" formControlName="productName">
+          <span class="text-danger" *ngIf="updateProductFormGroup.controls['productName'].touched
+                                              && updateProductFormGroup.controls['productName'].errors
+                                              && updateProductFormGroup.controls['productName'].errors!['required']">
+            productName is required</span>
+        </div>
+        
+        <div class="form-group mb-3">
+          <label class="form-label">Prix :</label>
+          <input type="text" class="form-control" formControlName="price">
+          <span class="text-danger" *ngIf="updateProductFormGroup.controls['price'].touched
+                                              && updateProductFormGroup.controls['price'].errors
+                                              && updateProductFormGroup.controls['price'].errors!['required']">
+            price is required</span>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label">Description :</label>
+          <input type="text" class="form-control" formControlName="description">
+          <span class="text-danger"
+            *ngIf="updateProductFormGroup.controls['description'].touched
+                                                              && updateProductFormGroup.controls['description'].errors
+                                                              && updateProductFormGroup.controls['description'].errors!['description']">
+            description is not valid</span>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label">Image :</label>
+          <input type="text" class="form-control" formControlName="image">
+          <span class="text-danger" *ngIf="updateProductFormGroup.controls['image'].touched
+                                                        && updateProductFormGroup.controls['image'].errors
+                                                        && updateProductFormGroup.controls['image'].errors!['minlength']">
+            image is required</span>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label">Quantité stock :</label>
+          <input type="stockQuantity" class="form-control" formControlName="stockQuantity">
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label">Categorie du produit :</label>
+          <input type="stockQuantity" class="form-control" formControlName="idCategory">
+        </div>
+
+        <button class="btn btn-success" [disabled]="updateProductFormGroup.invalid">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

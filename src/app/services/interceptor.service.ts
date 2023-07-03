@@ -12,7 +12,9 @@ export class InterceptorService {
   constructor(private authService: LoginService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if(req.url.includes('login') || req.url.includes('register') || req.url.includes('proprietes')){ return next.handle(req) }//on passe sans envoyer le token
+    if (req.url.includes('login') || req.url.includes('register')) {
+      return next.handle(req)
+    }//on passe sans envoyer le token
 
     if (LoginService.isTokenExpired()) return next.handle(req);
 

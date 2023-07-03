@@ -17,16 +17,21 @@ import {MatCardModule} from "@angular/material/card";
 import {LayoutModule} from "@angular/cdk/layout";
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductGesComponent } from './product-ges/product-ges.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const productRoutes: Routes = [
   { path: 'home', component: ProductComponent },
-  { path: 'home/detail-product', component: ProductDetailComponent },
-  { path: 'product', component: ProductGesComponent}
+  { path: 'home/detail-product/:id', component: ProductDetailComponent },
+  { path: 'product', component: ProductGesComponent },
+  { path: 'product/:update', component: UpdateProductComponent },
+  { path: 'addProduct', component: AddProductComponent}
 ];
 
 @NgModule({
   declarations: [
-    ProductGesComponent
+    UpdateProductComponent,
+    AddProductComponent
   ],
   imports: [
    CommonModule,

@@ -1,1 +1,53 @@
-<p>add-order works!</p>
+<div class="container-auth" *ngIf="addOrderFormGroup">
+  <div class="login box">
+    <form class="form" [formGroup]="addOrderFormGroup" (ngSubmit)="addOrder()">
+      <h2>Ajouter un produit</h2>
+      <div class="danger-1 align-self-center" *ngIf="message">{{ message }}</div>
+      <div id="message" class="inputBox">
+        <p>{{ message }}</p>
+      </div>
+
+      <div class="row50">
+        <div class="inputBox">
+          <label class="form-label">Montant :</label>
+          <input type="text" class="form-control" formControlName="amount">
+          <span class="text-danger" *ngIf="addOrderFormGroup.controls['amount'].touched
+                                    && addOrderFormGroup.controls['amount'].errors
+                                    && addOrderFormGroup.controls['amount'].errors!['required']">
+            amount is required</span>
+        </div>
+        <div class="inputBox">
+          <label class="form-label">Date :</label>
+          <input type="text" class="form-control" formControlName="date">
+          <span class="text-danger" *ngIf="addOrderFormGroup.controls['date'].touched
+                                    && addOrderFormGroup.controls['date'].errors
+                                    && addOrderFormGroup.controls['date'].errors!['required']">
+            date is required</span>
+        </div>
+      </div>
+
+      <div class="row50">
+        <div class="inputBox">
+          <label class="form-label">User :</label>
+          <input type="text" class="form-control" formControlName="idUser">
+          <span class="text-danger"
+            *ngIf="addOrderFormGroup.controls['idUser'].touched
+                                                    && addOrderFormGroup.controls['idUser'].errors
+                                                    && addOrderFormGroup.controls['idUser'].errors!['idUser']">
+            idUser is not valid</span>
+        </div>
+        <div class="inputBox">
+          <label class="form-label">products :</label>
+          <input type="text" class="form-control" formControlName="products">
+          <span class="text-danger" *ngIf="addOrderFormGroup.controls['products'].touched
+                                              && addOrderFormGroup.controls['products'].errors
+                                              && addOrderFormGroup.controls['products'].errors!['minlength']">
+            products is required</span>
+        </div>
+      </div>
+
+      <button class="btn btn-success mt-5" type="submit" [disabled]="addOrderFormGroup.invalid">Save</button>
+    </form>
+  </div>
+</div>
+

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of} from 'rxjs';
 import {map, catchError, tap} from "rxjs/operators";
@@ -24,5 +24,38 @@ export class ProductService {
         map(res=> res),
         catchError(err => of(err))
       );
+  }
+
+   public deleteProduct(id:number){
+    return this.http.delete(this.host + id);
+  }
+
+  public updateProduct(product: Product): Observable<Product>{
+    return this.http.put<Product>(this.host + "update/" + product.idProduct, product);
+  }
+
+  public addProduct(prod: Product): Observable<Product> {
+    return this.http.post<Product>(this.host + 'save', prod)
+    .pipe(
+        tap((response:Product) => {
+          console.log(response);
+        }),
+        catchError(err => of(err))
+      );
+  }
+
+  public saveProduct(prod: FormData): Observable<Product> {
+    return this.http.post<Product>(this.host + 'add', prod)
+    .pipe(
+        tap((response:Product) => {
+          console.log(response);
+        }),
+        catchError(err => of(err))
+      );
+  }
+
+  public getImageById(idImage: number) :Observable<any>{
+    return this.http.get(this.host + 'get-image/' + idImage, {responseType: 'blob'})
+      .pipe();
   }
 }

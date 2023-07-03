@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
 import { FormBuilder, FormGroup } from '@angular/forms';

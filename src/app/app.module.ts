@@ -41,12 +41,15 @@ import { UpdateProfileComponent } from './components/profiles/update-profile/upd
 import { InterceptorService } from './services/interceptor.service';
 import { LoginComponent } from './components/login/login.component';
 import { UpdateCategoryComponent } from './components/categories/update-category/update-category.component';
+import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
+import { ProductGesComponent } from './components/products/product-ges/product-ges.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductDetailComponent,
+    ProductGesComponent,
     HeaderComponent,
     FooterComponent,
     AdminComponent,
@@ -61,7 +64,8 @@ import { UpdateCategoryComponent } from './components/categories/update-category
     ProfileComponent,
     UpdateProfileComponent,
     LoginComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,

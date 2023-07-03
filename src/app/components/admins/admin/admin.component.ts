@@ -8,21 +8,9 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-   gestionUtilisateur(){
-    this.router.navigateByUrl("/users");
-  }
-
-  gestionAnnonce(){
-    this.router.navigateByUrl("/annonce");
-  }
-
-  gestionReservation(){
-    this.router.navigateByUrl("/reservation");
   }
 
 }

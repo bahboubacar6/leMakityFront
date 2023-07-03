@@ -20,6 +20,10 @@ export class CategoryService {
 
   }
 
+  public getAllCategory(): Observable<Array<Category>>{
+    return this.http.get<Array<Category>>(this.host + "all");
+  }
+
   public addCategorie(cat: Category): Observable<Category> {
     return this.http.post<Category>(this.host + 'save', cat)
     .pipe(

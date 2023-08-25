@@ -13,9 +13,15 @@ import { LoginComponent } from './components/login/login.component';
 import { UpdateCategoryComponent } from './components/categories/update-category/update-category.component';
 import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
 import { AddOrderComponent } from './components/orders/add-order/add-order.component';
+import { PageMvtStkComponent } from './components/mvtStks/page-mvt-stk/page-mvt-stk.component';
+import { PageCmdClientComponent } from './components/cmdClients/page-cmd-client/page-cmd-client.component';
+import { PagePanierComponent } from './components/paniers/page-panier/page-panier.component';
+import { ProductComponent } from './components/products/product/product.component';
+import { CommandeClientComponent } from './components/commande-client/commande-client.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: "full" },
+  { path: 'produit', component: ProductComponent},
   { path: 'admin', component: AdminComponent },
   { path: 'users', component: UserComponent },
   { path: 'addUser', component: AddUserComponent },
@@ -29,7 +35,11 @@ const routes: Routes = [
   { path: 'categories', component: CategoryComponent },
   { path: 'categories/:update', component: UpdateCategoryComponent },
   { path: 'addCategorie', component: AddCategoryComponent },
-  { path: 'addOrder', component: AddOrderComponent}
+  { path: 'addOrder', component: AddOrderComponent },
+  { path: 'mvtStk', component: PageMvtStkComponent },
+  { path: 'cmdClient', component: PageCmdClientComponent },
+  { path: 'panier', component: PagePanierComponent },
+  { path: 'commandesclient', component: CommandeClientComponent}
 ];
 
 @NgModule({

@@ -8,7 +8,9 @@ export const environment = {
   hostUser: "http://localhost:8082/v1/users/",
   hostCategory: "http://localhost:8082/v1/category/",
   hostLogin: "http://localhost:8082/v1/auth/",
-  hostOrder: "http://localhost:8082/v1/orders/"
+  hostOrder: "http://localhost:8082/v1/orders/",
+  hostPhoto: "http://localhost:8082/v1/",
+  hostCmdClient: "http://localhost:8082/v1/commandesclients/"
 };
 
 /*

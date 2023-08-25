@@ -1,0 +1,42 @@
+<div class="row mb-1 mr-0 custom-border">
+  <!--  Details article-->
+  <div class="col-md-2 custom-border-right mb-1 mt-1 ">
+    <div class="row text-center">
+      <div class="col-md-11">
+        <img style="height: 30px; width: 40px;" [src]="ligneCommande.product.image">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 custom-border-right mb-1 mt-1 ">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {{ ligneCommande.product.productName}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2 custom-border-right mb-1 mt-1 ">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {{ ligneCommande.product.price}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2 custom-border-right mb-1 mt-1 ">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {{ ligneCommande.quantite}}
+      </div> 
+    </div>
+  </div>
+
+  <div class="col-md-2 mb-1 mt-1">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {{ ligneCommande.product.price && ligneCommande.quantite ? +ligneCommande.product.price * +ligneCommande.quantite : ''}}
+      </div>
+    </div>
+  </div>
+</div>

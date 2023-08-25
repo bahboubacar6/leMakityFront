@@ -1,0 +1,62 @@
+<div class="container">
+  <app-nav-admin></app-nav-admin>
+</div>
+  <div class="container mt-3">
+    <div class="col">
+      <div class="row m-3">
+        <div class="col-md-8 p-0">
+          <h1>Mouvement du stock</h1>
+        </div>
+      </div>
+    <div class="col-md-12">
+      <div class="accordion" id="mvtStkDetails">
+        <div class="card">
+          <div class="card-body" id="headingOne">
+            <button class="btn btn-block text-left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              <app-detail-mvt-stk-produit></app-detail-mvt-stk-produit>
+            </button>
+          </div>
+          <div id="collapseOne" class="collapse-collapse collapse show" aria-labelledby="headingOne"
+            data-parent="#mvtStkDetails" style="max-height: 300px;
+                      overflow-y: scroll">
+            <div class="card-body">
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+              <app-detail-mvt-stk></app-detail-mvt-stk>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- +++++++++++++ -->
+    <div class="col-md-12 mt-2">
+        <div class="accordion" id="mvtStkDetails">
+          <div class="card">
+            <div class="card-body" id="headingOne1">
+              <button class="btn btn-block text-left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseOne">
+                <app-detail-mvt-stk-produit></app-detail-mvt-stk-produit>
+              </button>
+            </div>
+            <div id="collapseTwo" class="collapse-collapse collapse show" aria-labelledby="headingOne1"
+              data-parent="#mvtStkDetails" style="max-height: 300px;
+                        overflow-y: scroll">
+              <div class="card-body">
+                <app-detail-mvt-stk></app-detail-mvt-stk>
+                <app-detail-mvt-stk></app-detail-mvt-stk>
+                <app-detail-mvt-stk></app-detail-mvt-stk>
+                <app-detail-mvt-stk></app-detail-mvt-stk>
+                <app-detail-mvt-stk></app-detail-mvt-stk>
+                <app-detail-mvt-stk></app-detail-mvt-stk>
+                <app-detail-mvt-stk></app-detail-mvt-stk>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

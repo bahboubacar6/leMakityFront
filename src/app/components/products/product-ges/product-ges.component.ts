@@ -37,43 +37,13 @@ export class ProductGesComponent implements OnInit {
 
   searchProduct(){
     let kw = this.searchFormGroup?.value.keyword;
-
     this.products$ = this.productService.getPageProducts(kw, this.currentPage, this.pageSize).pipe(
-      map(res=> {
-        res.productDTOS.forEach(
-          (prod)=> {
-            prod.productImages.map(
-              (image => {
-                this.productService.getImageById(image.id).subscribe(
-                  (blob)=>{
-                    let objectURL = URL.createObjectURL(blob);
-                    const imageSrc = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-                    image.picByte = imageSrc;
-                    console.log(image)
-                  }
-                );
-              })
-            )
-          }
-        );
-
-        return res;
-      }),
       catchError(err=>{
         this.errorMessage=err.message;
         return throwError(err);
       })
     );
   }
-  // searchProduct(){
-  //   let kw = this.searchFormGroup?.value.keyword;
-  //   this.products$ = this.productService.getPageProducts(kw, this.currentPage, this.pageSize).pipe(
-  //     catchError(err=>{
-  //       this.errorMessage=err.message;
-  //       return throwError(err);
-  //     })
-  //   );
-  // }
 
   gotoPage(p: number) {
     this.currentPage = p;

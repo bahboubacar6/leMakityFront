@@ -1,0 +1,45 @@
+<div class="container mt-3">
+  <div class="col">
+    <div class="row m-3">
+      <div class="col-md-8 p-0">
+        <h1>Mon Panier</h1>
+      </div>
+      <div class="col-md-4 text-right">
+      </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th>IMAGE</th>
+                <th>DESIGNATION</th>
+                <th>PU TTC</th>
+                <th>QUANTITE</th>
+                <th>PT TTC</th>
+              </tr>
+            </thead>
+          </table>
+          <div class="card-body">
+              <app-detail-cmd-panier *ngFor= "let ligne of ligneCmdClient" [ligneCommande] = "ligne"></app-detail-cmd-panier>
+          </div>
+          <div class="card-footer">
+            <div class="row mt-2">
+              
+              <div class="col-md-6 text-left">
+                <button class="btn btn-primary" (click)="enregistrerCommande()">
+                  Passer la commande
+                </button>
+              </div>
+              <div class="col-md-6 text-right">
+                <h2>Total commande: {{ totalCommande }} &#x20AC; TTC</h2>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>

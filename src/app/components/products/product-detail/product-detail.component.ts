@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  produit!: Product;
+  idProduct!: number;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.produit = this.router.getCurrentNavigation()?.extras.state as Product;
+   }
 
   ngOnInit(): void {
+    this.idProduct = this.route.snapshot.params['id'];
   }
 
 }

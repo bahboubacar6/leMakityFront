@@ -1,4 +1,3 @@
-import { FileHandle } from "./file-handle.model";
 
 export interface ProductPage {
     currentPage: number;
@@ -14,6 +13,5 @@ export interface ProductDTO {
     description:   string;
     image:         string;
     stockQuantity: number;
-    productImages: FileHandle[];
     idCategory:    number;
 }

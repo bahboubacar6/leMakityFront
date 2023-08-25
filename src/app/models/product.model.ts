@@ -1,4 +1,3 @@
-import { FileHandle } from "./file-handle.model";
 
 export interface Product {
 
@@ -8,6 +7,5 @@ export interface Product {
     description: string;
     image: string;
     stockQuantity: number;
-    productImages: FileHandle[];
     idCategory: number;
 }

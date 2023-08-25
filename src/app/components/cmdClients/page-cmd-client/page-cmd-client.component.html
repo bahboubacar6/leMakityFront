@@ -1,0 +1,48 @@
+<div class="container">
+  <app-nav-admin></app-nav-admin>
+</div>
+<div class="container mt-3">
+  <div class="col">
+    <div class="row m-3">
+      <div class="col-md-8 p-0">
+        <h1>Commande Client</h1>
+      </div>
+    </div>
+  <div class="col-md-12">
+    <div class="accordion" id="mvtStkDetails">
+      <div class="card">
+        <div class="card-body" id="headingOne">
+          <button class="btn btn-block text-left" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            <app-detail-cmd-client></app-detail-cmd-client>
+          </button>
+        </div>
+        <div id="collapseOne" class="collapse-collapse collapse show" aria-labelledby="headingOne"
+          data-parent="#mvtStkDetails" style="max-height: 300px;
+                      overflow-y: scroll">
+          <div class="card-body">
+            <app-detail-cmd></app-detail-cmd>
+            <app-detail-cmd></app-detail-cmd>
+            <app-detail-cmd></app-detail-cmd>
+            <app-detail-cmd></app-detail-cmd>
+            <app-detail-cmd></app-detail-cmd>
+            <app-detail-cmd></app-detail-cmd>
+            <app-detail-cmd></app-detail-cmd>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <h3>10 lignes de commande</h3>
+            </div>
+            <div class="col-md-6 text-right">
+              <h3>Total commande: 150</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>

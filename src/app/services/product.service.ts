@@ -44,18 +44,7 @@ export class ProductService {
       );
   }
 
-  public saveProduct(prod: FormData): Observable<Product> {
-    return this.http.post<Product>(this.host + 'add', prod)
-    .pipe(
-        tap((response:Product) => {
-          console.log(response);
-        }),
-        catchError(err => of(err))
-      );
-  }
-
-  public getImageById(idImage: number) :Observable<any>{
-    return this.http.get(this.host + 'get-image/' + idImage, {responseType: 'blob'})
-      .pipe();
+   public getProduct(idProduct: number ): Observable<Product>{
+    return this.http.get<Product>(this.host + idProduct);
   }
 }

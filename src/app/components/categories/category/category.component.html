@@ -4,7 +4,7 @@
 <div class="container mt-3">
   <ng-container *ngIf="category$|async as listCategory; else failureOrLoading">
     <div class="card">
-      <div class="card-header">Liste des utilisateurs</div>
+      <div class="card-header">Liste des categories</div>
       <div class="card-body">
         <div *ngIf="searchFormGroup">
           <form [formGroup]="searchFormGroup" (ngSubmit)="searchCategory()">

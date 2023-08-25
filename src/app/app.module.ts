@@ -26,7 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductModule } from './components/products/product.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from './components/carousel/carousel.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './components/admins/admin/admin.component';
 import { UserComponent } from './components/users/user/user.component';
 import { AddUserComponent } from './components/users/add-user/add-user.component';
@@ -43,6 +43,15 @@ import { LoginComponent } from './components/login/login.component';
 import { UpdateCategoryComponent } from './components/categories/update-category/update-category.component';
 import { OrderDetailComponent } from './components/orders/order-detail/order-detail.component';
 import { ProductGesComponent } from './components/products/product-ges/product-ges.component';
+import { PageMvtStkComponent } from './components/mvtStks/page-mvt-stk/page-mvt-stk.component';
+import { DetailMvtStkProduitComponent } from './components/mvtStks/detail-mvt-stk-produit/detail-mvt-stk-produit.component';
+import { DetailMvtStkComponent } from './components/mvtStks/detail-mvt-stk/detail-mvt-stk.component';
+import { DetailCmdClientComponent } from './components/cmdClients/detail-cmd-client/detail-cmd-client.component';
+import { DetailCmdComponent } from './components/cmdClients/detail-cmd/detail-cmd.component';
+import { PageCmdClientComponent } from './components/cmdClients/page-cmd-client/page-cmd-client.component';
+import { PagePanierComponent } from './components/paniers/page-panier/page-panier.component';
+import { DetailCmdPanierComponent } from './components/paniers/detail-cmd-panier/detail-cmd-panier.component';
+import { CommandeClientComponent } from './components/commande-client/commande-client.component';
 
 @NgModule({
   declarations: [
@@ -65,13 +74,23 @@ import { ProductGesComponent } from './components/products/product-ges/product-g
     UpdateProfileComponent,
     LoginComponent,
     UpdateCategoryComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    PageMvtStkComponent,
+    DetailMvtStkProduitComponent,
+    DetailMvtStkComponent,
+    DetailCmdClientComponent,
+    DetailCmdComponent,
+    PageCmdClientComponent,
+    PagePanierComponent,
+    DetailCmdPanierComponent,
+    CommandeClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
     MatButtonModule,

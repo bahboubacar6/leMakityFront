@@ -1,14 +1,19 @@
 <div class="container-auth" *ngIf="addProductFormGroup">
   <div class="login box">
-    <form class="form" [formGroup]="addProductFormGroup" (ngSubmit)="saveProduct()">
-
-      {{addProductFormGroup.value|json}}
-      <h2>Ajouter un produit</h2>
+    <h2 class="text-center">Ajouter un produit</h2>
+    
+    <div class="col-md-4 custom-border-right p-1 text-center m-1 ">
+      <button (click)="fileInput.click()" style="background-color: transparent; border: none;">
+        <img [src]="imgUrl" class="rounded-circle" width="200px" height="150px" />
+        <input hidden type="file" #fileInput (change)="onFileInput(fileInput.files)">
+      </button>
+    </div>
+    <hr>
+    <form class="form" [formGroup]="addProductFormGroup" (ngSubmit)="addProduct()">
       <div class="danger-1 align-self-center" *ngIf="message">{{ message }}</div>
       <div id="message" class="inputBox">
         <p>{{ message }}</p>
       </div>
-
       <div class="row50">
         <div class="inputBox">
           <label class="form-label">Nom du produit :</label>
@@ -28,7 +33,7 @@
         </div>
       </div>
 
-      <div class="row50">
+    
         <div class="inputBox">
           <label class="form-label">Description :</label>
           <input type="text" class="form-control" formControlName="description">
@@ -37,20 +42,7 @@
                                                     && addProductFormGroup.controls['description'].errors!['description']">
             description is not valid</span>
         </div>
-        <!-- <div class="inputBox">
-          <label class="form-label">Image :</label>
-          <input type="text" class="form-control" formControlName="image">
-          <span class="text-danger" *ngIf="addProductFormGroup.controls['image'].touched
-                                              && addProductFormGroup.controls['image'].errors
-                                              && addProductFormGroup.controls['image'].errors!['minlength']">
-            image is required</span>
-        </div> -->
-        <div class="inputBox">
-          <label class="form-label">Image :</label>
-          <input type="file" multiple #selectFile (change)="onFileSelected($event)" formControlName="image">
-        </div>
-      </div>
-
+    
       <div class="row50">
         <div class="inputBox">
           <label class="form-label">Quantité stock :</label>
@@ -58,12 +50,12 @@
         </div>
         <div class="inputBox">
           <label class="form-label">Categorie :</label>
-          <select formControlName="idCategory">
-            <option  ngValue ="" disabled> Choisissez la categorie </option>
-            <option *ngFor="let cat of categorie"  ngValue = {{cat.idCategory}}>
+           <select class="custom-select mb-3" formControlName="idCategory">
+            <option  [ngValue] ="" disabled> Choisissez la categorie </option>
+            <option *ngFor="let cat of categories"  ngValue = {{cat.idCategory}}>
               {{ cat.categoryName }}
             </option>
-          </select>
+          </select> 
         </div>
       </div>
 
